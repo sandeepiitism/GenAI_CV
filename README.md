@@ -19,3 +19,8 @@ Other use cases of this GenAI and Computer Vision Fusion on #Video #Analytics by
 🔒 𝗦𝗲𝗰𝘂𝗿𝗶𝘁𝘆 & 𝗦𝘂𝗿𝘃𝗲𝗶𝗹𝗹𝗮𝗻𝗰𝗲: Real-time threat detection helps identify suspicious activities, improving public safety and crime prevention.
 
 
+### output:
+
+https://github.com/user-attachments/assets/f8c2c195-2f41-4eb8-b3f5-3103d5aec695
+
+
