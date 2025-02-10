@@ -1,0 +1,6 @@
+### note: Environment used is: C:\Users\sande\.conda\envs\test_env
+
+opencv-python
+langchain
+langchain-core
+langchain_google_genai
