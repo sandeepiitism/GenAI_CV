@@ -6,22 +6,22 @@ import threading
 from langchain_core.messages import HumanMessage
 from langchain_google_genai import ChatGoogleGenerativeAI
 
-# ✅ Set up Google API Key
+### Set up Google API Key
 os.environ["GOOGLE_API_KEY"] = "AI************************"
 
-# ✅ Initialize the Gemini model
+### Initialize the Gemini model
 model = ChatGoogleGenerativeAI(model="gemini-1.5-flash")
 
-# ✅ Function to send the captured image to Gemini for analysis
+### Function to send the captured image to Gemini for analysis
 def analyze_image_with_gemini(image):
     if image is None:
         return "No image to analyze."
 
-    # Convert the captured image to base64
+    ### Convert the captured image to base64
     _, img_buffer = cv2.imencode('.jpg', image)
     image_data = base64.b64encode(img_buffer).decode('utf-8')
 
-    # Create the message with the image
+    ### Create the message with the image
     message = HumanMessage(
         content=[ 
             {"type": "text", "text": "The agent's task is to detect which color jersey and jersey number is having the football. If there are multiple players, check for only that player who is having the football and report what it his jersey number or color whichever is visible. Provide only that information."},
@@ -29,11 +29,11 @@ def analyze_image_with_gemini(image):
         ]
     )
     
-    # Send the message to Gemini and get the response
+    ### Send the message to Gemini and get the response
     response = model.invoke([message])
     return response.content
 
-# ✅ Function to save response to a text file with timestamp
+### Function to save response to a text file with timestamp
 def save_response_to_file(response):
     timestamp = time.strftime("%Y-%m-%d %H:%M:%S")
     filename = "gemini_responses.txt"
@@ -43,7 +43,7 @@ def save_response_to_file(response):
     
     print(f"Response saved to {filename}")
 
-# ✅ Function to continuously capture images and analyze them
+### Function to continuously capture images and analyze them
 def background_capture(cap):
     while True:
         time.sleep(2)  # Wait for 2 seconds before capturing the next image
@@ -59,7 +59,7 @@ def background_capture(cap):
         
         save_response_to_file(response_content)  # Save response to a file
 
-# ✅ Main function to show live feed and start background analysis
+### Main function to show live feed and start background analysis
 def main():
     cap = cv2.VideoCapture('football.mp4')  # Load video file or replace with 0 for webcam
 
