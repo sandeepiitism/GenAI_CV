@@ -7,7 +7,7 @@ from langchain_core.messages import HumanMessage
 from langchain_google_genai import ChatGoogleGenerativeAI
 
 # ✅ Set up Google API Key
-os.environ["GOOGLE_API_KEY"] = "AIzaSyBnud8htyFljti5Ph-mR8dwI-mbojSR0FA"
+os.environ["GOOGLE_API_KEY"] = "AI************************"
 
 # ✅ Initialize the Gemini model
 model = ChatGoogleGenerativeAI(model="gemini-1.5-flash")
